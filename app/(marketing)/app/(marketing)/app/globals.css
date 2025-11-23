@@ -1,0 +1,57 @@
+diff --git a/app/globals.css b/app/globals.css
+new file mode 100644
+index 0000000000000000000000000000000000000000..2edde26be121fb4cc5695fcc8e032d2ddc1cccca
+--- /dev/null
++++ b/app/globals.css
+@@ -0,0 +1,51 @@
++@tailwind base;
++@tailwind components;
++@tailwind utilities;
++
++:root {
++  --neon-blue: #00EAFF;
++  --neon-purple: #9B5CF6;
++  --neon-cyan: #20FFFF;
++  color-scheme: dark;
++}
++
++* {
++  margin: 0;
++  padding: 0;
++  box-sizing: border-box;
++}
++
++body {
++  background-color: #0b1021;
++  min-height: 100vh;
++  font-smoothing: antialiased;
++  -webkit-font-smoothing: antialiased;
++}
++
++a {
++  color: inherit;
++  text-decoration: none;
++}
++
++.radial-neon {
++  background-image:
++    radial-gradient(circle at 20% 20%, rgba(0, 234, 255, 0.15), transparent 35%),
++    radial-gradient(circle at 80% 0%, rgba(155, 92, 246, 0.14), transparent 35%),
++    radial-gradient(circle at 50% 80%, rgba(32, 255, 255, 0.1), transparent 35%);
++}
++
++.glass-panel {
++  background: linear-gradient(135deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.02));
++  border: 1px solid rgba(255, 255, 255, 0.06);
++  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.45), 0 0 24px rgba(0, 234, 255, 0.15);
++}
++
++.text-neon-gradient {
++  background: linear-gradient(120deg, var(--neon-blue), var(--neon-purple));
++  -webkit-background-clip: text;
++  color: transparent;
++}
++
++.input-neon {
++  @apply w-full rounded-xl bg-white/5 border border-white/10 text-white placeholder:text-white/50 shadow-[0_0_18px_rgba(0,234,255,0.1)] focus:outline-none focus:ring-2 focus:ring-neon-blue/60 focus:border-neon-blue/80 px-4 py-3 backdrop-blur-lg;
++}
